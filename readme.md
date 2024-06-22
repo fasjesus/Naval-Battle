@@ -45,7 +45,7 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 - O servidor gerencia o estado do jogo e o tabuleiro para cada cliente conectado.
 
 ### Colaboradores
-- Brenda
-- Flávia
-- Isaac
-- Laiz
+- Brenda `Brendacas`
+- Flávia `fasjesus`
+- Isaac ` `
+- Laiz ` `
