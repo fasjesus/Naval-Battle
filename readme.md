@@ -19,33 +19,33 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 ### Passos para Executar o Servidor
 
 1. Navegue até a pasta `server`:
-   cd Naval Battle/Server
+   - cd Naval Battle/Server
 
 2. Execute o script:
-    python server.py
+    - python server.py
 
 ### Passos para Executar o Cliente
 
 1. Navegue até a pasta `Client`:
-   cd Naval Battle/Client
+   - cd Naval Battle/Client
 
 2. Execute o script:
-    python client.py
+    - python client.py
 
 ### Protocolo de Comunicação
 
-O servidor e o cliente se comunicam através de sockets TCP.
-O cliente envia comandos no formato: <letra> <número>.
-O servidor responde com mensagens indicando se o jogador acertou ou errou e atualiza o estado do tabuleiro.
+- O servidor e o cliente se comunicam através de sockets TCP.
+- O cliente envia comandos no formato: <letra> <número>.
+- O servidor responde com mensagens indicando se o jogador acertou ou errou e atualiza o estado do tabuleiro.
 
 ### Funcionamento do Jogo
 
-Cada jogador tem 20 tentativas para acertar os navios do adversário.
-O tabuleiro é de 15x15 e contém 10 navios posicionados aleatoriamente.
-O servidor gerencia o estado do jogo e o tabuleiro para cada cliente conectado.
+- Cada jogador tem 20 tentativas para acertar os navios do adversário.
+- O tabuleiro é de 15x15 e contém 10 navios posicionados aleatoriamente.
+- O servidor gerencia o estado do jogo e o tabuleiro para cada cliente conectado.
 
 ### Contribuidores
-Brenda
-Flávia
-Isaac
-Laiz
+- Brenda
+- Flávia
+- Isaac
+- Laiz
