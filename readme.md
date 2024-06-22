@@ -18,7 +18,7 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 
 ### Passos para Executar o Servidor
 
-1. Navegue até a pasta `server`:
+1. Navegue até a pasta `Server`:
    - cd Naval Battle/Server
 
 2. Execute o script:
@@ -44,7 +44,7 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 - O tabuleiro é de 15x15 e contém 10 navios posicionados aleatoriamente.
 - O servidor gerencia o estado do jogo e o tabuleiro para cada cliente conectado.
 
-### Contribuidores
+### Colaboradores
 - Brenda
 - Flávia
 - Isaac
