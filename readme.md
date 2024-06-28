@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-servidor em Python. O jogo é para dois jogadores, onde cada jogador tenta afundar os navios do adversário.
+Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-servidor em Python. O jogo é para um usuário vs computador, onde cada jogador tenta afundar os navios do adversário.
 
 ## Estrutura do Projeto
 
@@ -47,5 +47,5 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 ### Colaboradores
 - Brenda `Brendacas`
 - Flávia `fasjesus`
-- Isaac ` `
-- Laiz ` `
+- Isaac `inlima`
+- Laiz `laizcruz`
