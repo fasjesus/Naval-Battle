@@ -52,16 +52,22 @@ def handle_client(conn, addr, campo, campo_exibicao):
     conn.close()
 
 def main():
-    campo = inicializa_campo()
-    campo_exibicao = inicializa_campo()
-    coloca_navios(campo)
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('0.0.0.0', 8080))
-    server.listen(5)
-    print("Servidor iniciado na porta 8080")
-    while True:
-        conn, addr = server.accept()
-        threading.Thread(target=handle_client, args=(conn, addr, campo, campo_exibicao)).start()
+    
+	HOST = '0.0.0.0'
+	PORT = 8080
+
+	campo = inicializa_campo()
+	campo_exibicao = inicializa_campo()
+	coloca_navios(campo)
+    
+	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	server.bind((HOST, PORT))
+	server.listen(5)
+    
+	print("Servidor iniciado na porta 8080")
+	while True:
+		conn, addr = server.accept()
+		threading.Thread(target=handle_client, args=(conn, addr, campo, campo_exibicao)).start()
 
 if __name__ == "__main__":
     main()
