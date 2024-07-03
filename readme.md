@@ -26,11 +26,15 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 
 ### Passos para Executar o Cliente
 
+Em outro terminal:
+
 1. Navegue até a pasta `Client`:
    - cd Naval Battle/Client
 
 2. Execute o script:
     - python client.py
+
+###
 
 ### Protocolo de Comunicação
 

@@ -1,12 +1,12 @@
 import socket
 
 def main():
-
-    HOST = '172.26.6.67'
+    # Altere para o IP do servidor
+    HOST = '192.168.72.136'
     PORT = 8080
 
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect((HOST, PORT))  # Conecte na porta correta
+    client.connect((HOST, PORT))
 
     print("Digite 'sair' para encerrar a conexão.")
 

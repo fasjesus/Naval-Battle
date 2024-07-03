@@ -32,7 +32,11 @@ def handle_client(conn, addr, campo, campo_exibicao):
         data = conn.recv(1024).decode('utf-8')
         if not data or data.lower() == 'sair':
             break
-        letra, numero = data.split()
+        try:
+            letra, numero = data.split()
+        except ValueError:
+            conn.sendall("Entrada inválida. Por favor, forneça uma letra e um número.\n".encode('utf-8'))
+            continue
         x = int(numero) - 1
         y = ord(letra.upper()) - ord('A')
         if 0 <= x < SIZE and 0 <= y < SIZE:
@@ -52,22 +56,21 @@ def handle_client(conn, addr, campo, campo_exibicao):
     conn.close()
 
 def main():
-    
-	HOST = '0.0.0.0'
-	PORT = 8080
+    HOST = '0.0.0.0'
+    PORT = 8080
 
-	campo = inicializa_campo()
-	campo_exibicao = inicializa_campo()
-	coloca_navios(campo)
+    campo = inicializa_campo()
+    campo_exibicao = inicializa_campo()
+    coloca_navios(campo)
     
-	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	server.bind((HOST, PORT))
-	server.listen(5)
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind((HOST, PORT))
+    server.listen(5)
     
-	print("Servidor iniciado na porta 8080")
-	while True:
-		conn, addr = server.accept()
-		threading.Thread(target=handle_client, args=(conn, addr, campo, campo_exibicao)).start()
+    print("Servidor iniciado na porta 8080")
+    while True:
+        conn, addr = server.accept()
+        threading.Thread(target=handle_client, args=(conn, addr, campo, campo_exibicao)).start()
 
 if __name__ == "__main__":
     main()
