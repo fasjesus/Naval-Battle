@@ -6,9 +6,10 @@ Este projeto implementa o jogo de Batalha Naval utilizando o modelo cliente-serv
 
 ## Estrutura do Projeto
 
-- `Game/game.py`: Módulo que contém a lógica principal do jogo (inicialização do campo, posicionamento dos navios, exibição do campo).
-- `Server/server.py`: Script do servidor que gerencia o estado do jogo e responde aos comandos do cliente.
-- `Client/client.py`: Script do cliente que se conecta ao servidor e permite ao usuário inserir suas tentativas.
+- Temos uma pasta para cada modalidade de conexão (Ethernet; LocalHost e Wifi) e cada uma delas contém os arquivos `client.py` e `server.py` com o IP adaptado conforme a sua modalidade.
+- `game.py`: Módulo que contém a lógica principal do jogo (inicialização do campo, posicionamento dos navios, exibição do campo).
+- `server.py`: Script do servidor que gerencia o estado do jogo e responde aos comandos do cliente.
+- `client.py`: Script do cliente que se conecta ao servidor e permite ao usuário inserir suas tentativas.
 - `README.md`: Documentação do projeto.
 
 ## Como Executar
@@ -34,7 +35,27 @@ Em outro terminal:
 2. Execute o script:
     - python client.py
 
-###
+### PARA VERIRIFICAR IP:
+
+- ipconfig
+
+exemplo:
+
+Adaptador Ethernet Ethernet:
+
+   Sufixo DNS específico de conexão. . . . . . : uesc.net
+   Endereço IPv6 de link local . . . . . . . . : fe80::49e5:1c32:b9f0:b23d%18
+   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.72.3
+   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.254.0
+   Gateway Padrão. . . . . . . . . . . . . . . : 192.168.73.1
+
+Adaptador de Rede sem Fio Wi-Fi:
+
+   Sufixo DNS específico de conexão. . . . . . :
+   Endereço IPv6 de link local . . . . . . . . : fe80::1b27:871a:2336:38eb%8
+   Endereço IPv4. . . . . . . .  . . . . . . . : 172.26.11.205
+   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.192.0
+   Gateway Padrão. . . . . . . . . . . . . . . : 172.26.0.1
 
 ### Protocolo de Comunicação
 
