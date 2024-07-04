@@ -1,11 +1,14 @@
 import socket
 
-def main():
-    HOST = '172.26.6.67'  # IP da máquina do servidor
-    PORT = 8080
+SIZE = 15
+#HOST = '172.26.11.205' IP WIFI de Flávia
+HOST = '172.26.10.211' # IP WIFI de Isaac
+#HOST = '127.0.0.1'
+PORT = 8080
 
+def main():
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect((HOST, PORT))  # Conecte na porta correta
+    client.connect((HOST, PORT))
 
     print("Digite 'sair' para encerrar a conexão.")
 
@@ -16,19 +19,27 @@ def main():
         if "Fim de jogo" in data:
             break
 
-        letra = input("Digite a letra: ")
-        if letra.lower() == 'sair':
-            print("Encerrando a conexão...")
-            client.sendall(letra.encode('utf-8'))
-            break
+        while True:
+            letra = input("Digite a letra: ")
+            if letra.lower() == 'sair':
+                print("Encerrando a conexão...")
+                client.sendall(letra.encode('utf-8'))
+                return
+            if letra.upper() < 'A' or letra.upper() > chr(ord('A') + SIZE - 1):
+                print("Coordenada inválida, tente novamente.")
+                continue
 
-        numero = input("Digite o número: ")
-        if numero.lower() == 'sair':
-            print("Encerrando a conexão...")
-            client.sendall(numero.encode('utf-8'))
-            break
+            numero = input("Digite o número: ")
+            if numero.lower() == 'sair':
+                print("Encerrando a conexão...")
+                client.sendall(numero.encode('utf-8'))
+                return
+            if not numero.isdigit() or int(numero) < 1 or int(numero) > SIZE:
+                print("Coordenada inválida, tente novamente.")
+                continue
 
-        client.sendall(f"{letra} {numero}".encode('utf-8'))
+            client.sendall(f"{letra} {numero}".encode('utf-8'))
+            break
 
     client.close()
 

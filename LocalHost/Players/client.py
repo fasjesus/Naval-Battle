@@ -9,7 +9,7 @@ def main():
         print(data)
         if "Fim de jogo" in data:
             break
-        if "Sua vez!" in data:
+        if "Você já tentou" in data:  # Indica que é a vez do cliente
             letra = input("Digite a letra: ")
             numero = input("Digite o número: ")
             client.sendall(f"{letra} {numero}".encode('utf-8'))

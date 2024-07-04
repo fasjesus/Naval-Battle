@@ -7,6 +7,6 @@ Ethernet: Não imprime o tabuleiro para o cliente.
 
 Wifi: não funciona.
 
-cd \Users\fdpc0\OneDrive\Área de Trabalho\uesclem\2024\Redes\Naval Battle\
+cd \Users\fdpc0\OneDrive\Área de Trabalho\uesclem\2024\Redes\Naval Battle\Wifi
 python server.py
 python client.py
