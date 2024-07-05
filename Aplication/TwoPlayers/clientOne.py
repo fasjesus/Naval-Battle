@@ -2,7 +2,7 @@ import socket
 
 # HOST = '127.0.0.1' #LocalHost
 # HOST = '192.168.72.1'
-HOST = '172.26.11.205'
+HOST = '192.168.72.3'
 PORT = 8080
 
 def main():
