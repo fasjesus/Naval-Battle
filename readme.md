@@ -1,4 +1,4 @@
-# Documentação do Protocolo e Funcionamento do Software
+# Documentação do Protocolo e Funcionamento do Software do Jogo de Batalha Naval Ciente - Servidor
 
 ## Propósito do Software
 
