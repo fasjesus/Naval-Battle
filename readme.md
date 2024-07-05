@@ -81,8 +81,8 @@ Eventos e Estados
 - Cliente: Estabelece conexão com o servidor.
 
 2. Inicialização do Jogo:
-- Servidor: Envia mensagem de boas-vindas ao cliente e inicializa o campo de batalha.
-- Cliente: Recebe mensagem de boas-vindas.
+- Servidor: Envia mensagem de boas-vindas ao cliente, inicializa o campo de batalha e pergunta ao cliente a letra e o número.
+- Cliente: Recebe mensagem de boas-vindas e das questões das coordenadas.
 
 3. Jogada do Cliente:
 - Cliente: Envia coordenadas da jogada ao servidor.
@@ -100,8 +100,11 @@ Eventos e Estados
 - Servidor e Cliente: Fecham a conexão quando o jogo termina ou o cliente opta por sair.
 
 ## Mensagens Trocadas
-1. Mensagem de Boas-Vindas:
+1. Mensagem de Boas-Vindas e perguntas das coordenadas da jogada:
 - Servidor para Cliente: "\nBem-vindo ao jogo Batalha Naval!\n"
+- Servidor para Cliente: "\nDigite a letra:\n"
+- Servidor para Cliente: "\nDigite o número:\n"
+
 
 2. Jogada do Cliente:
 - Cliente para Servidor: "<letra número>\n"
