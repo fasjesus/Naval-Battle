@@ -38,7 +38,10 @@ Em outro terminal:
 1. Navegue até a pasta `Client`:
    - cd Naval Battle/Client
 
-2. Execute o script:
+2. Ajuste o endereço IP do servidor no cliente:
+   - No arquivo cliente.py, ajuste o valor da variável HOST para o endereço IP do servidor.
+
+3. Execute o script:
     - python client.py
 
 ### PARA VERIRIFICAR IP:
