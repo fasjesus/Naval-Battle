@@ -138,7 +138,7 @@ Estrutura de Mensagens
 
 ## Funcionamento do Software
 
-# Servidor
+## Servidor
 1. Inicialização:
 - Cria um socket TCP/IP.
 - Vincula o socket a um endereço IP e porta.
@@ -157,7 +157,7 @@ Estrutura de Mensagens
 4. Desconexão:
 - Fecha a conexão com o cliente ao final do jogo ou por comando do cliente.
 
-# Cliente
+## Cliente
 
 1. Inicialização:
 - Cria um socket TCP/IP.
