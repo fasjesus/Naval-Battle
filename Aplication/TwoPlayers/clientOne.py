@@ -1,6 +1,7 @@
 import socket
 
-HOST = '127.0.0.1'
+HOST = '127.0.0.1' #LocalHost
+HOST = '192.168.72.1'
 PORT = 8080
 
 def main():

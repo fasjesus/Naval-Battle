@@ -3,9 +3,9 @@ import threading
 import random
 import time
 
-SIZE = 10        
-NUM_NAVIOS = 5   
-MAX_TENT = 2   
+SIZE = 15        
+NUM_NAVIOS = 10   
+MAX_TENT = 10   
 
 def inicializa_campo():
     """Inicializa um campo de jogo vazio."""

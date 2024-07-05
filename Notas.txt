@@ -9,6 +9,6 @@ Wifi: não funciona.
 
 Test Funciona: porém, o ultimo campo de exibição não está sendo exibido completo.
 
-cd \Users\fdpc0\OneDrive\Área de Trabalho\uesclem\2024\Redes\Naval Battle\Test
+cd \Users\fdpc0\OneDrive\Área de Trabalho\uesclem\2024\Redes\Naval Battle\Aplication\TwoPlayers
 python server.py
 python client.py

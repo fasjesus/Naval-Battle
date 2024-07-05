@@ -10,7 +10,7 @@ O protocolo de transporte utilizado é o TCP (Transmission Control Protocol). A 
 
 ## Estrutura do Projeto
 
-- Temos uma pasta para cada modalidade de conexão (Ethernet; LocalHost e Wifi) e cada uma delas contém os arquivos `client.py` e `server.py` com o IP adaptado conforme a sua modalidade.
+- Temos uma pasta "Aplication" que contém os códigos tanto para a modalidade Jogador vs Máquina e 2 players. e cada uma delas contém os arquivos `client.py` e `server.py` com o IP adaptado conforme a sua modalidade.
 - `game.py`: Módulo que contém a lógica principal do jogo (inicialização do campo, posicionamento dos navios, exibição do campo).
 - `server.py`: Script do servidor que gerencia o estado do jogo e responde aos comandos do cliente.
 - `client.py`: Script do cliente que se conecta ao servidor e permite ao usuário inserir suas tentativas.
@@ -62,22 +62,46 @@ Adaptador de Rede sem Fio Wi-Fi:
 
 ### Passos para Executar o Servidor
 
-1. Navegue até a pasta `Server`:
-   - cd Naval Battle/Server
+## Para Jogador vs Máquina
+1. Navegue até a pasta `PlayerMachine`:
+   - cd Naval Battle\Aplication\PlayerMachine
+
+2. Execute o script:
+    - python server.py
+
+## Para 2 jogadores
+
+1. Navegue até a pasta `TwoPlayers`:
+   - cd Naval Battle\Aplication\TwoPlayers
 
 2. Execute o script:
     - python server.py
 
 ### Passos para Executar o Cliente
 
+## Para Jogador vs Máquina
+
 Em outro terminal:
 
-1. Navegue até a pasta `Client`:
-   - cd Naval Battle/Client
+1. Navegue até a pasta `PlayerMachine`:
+   - cd Naval Battle\Aplication\PlayerMachine
 
 2. Execute o script:
     - python client.py
 
+## Para 2 jogadores
+
+1. Navegue até a pasta `TwoPlayers`:
+   - cd Naval Battle\Aplication\TwoPlayers
+
+2. Execute o script:
+   - python clientOne.py
+
+Em outro terminal:
+
+2.1. Execute o script:
+   - python clientTwo.py
+   
 
 ### Protocolo de Comunicação (resumo)
 
@@ -189,7 +213,6 @@ Estrutura de Mensagens
 
 3. Desconexão:
 - Fecha a conexão ao final do jogo ou por comando do usuário.
-
 
 
 ### Colaboradores
