@@ -142,7 +142,7 @@ Estrutura de Mensagens
 1. Inicialização:
 - Cria um socket TCP/IP.
 - Vincula o socket a um endereço IP e porta.
-- Escuta conexões de entrada, ou seja, oloca o socket em um estado de escuta, onde ele monitora a porta especificada e aguarda tentativas de conexão de clientes.
+- Escuta conexões de entrada, ou seja, coloca o socket em um estado de escuta, onde ele monitora a porta especificada e aguarda tentativas de conexão de clientes.
 
 2. Gerenciamento de Conexões:
 - Aceita novas conexões e cria uma nova thread para cada cliente.
