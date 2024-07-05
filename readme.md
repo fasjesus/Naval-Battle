@@ -66,7 +66,7 @@ Adaptador de Rede sem Fio Wi-Fi:
 ### Protocolo de Comunicação (resumo)
 
 - O servidor e o cliente se comunicam através de sockets TCP.
-- O cliente envia comandos no formato: <letra> <número>.
+- O cliente envia comandos no formato: '<letra> <número>'.
 - O servidor responde com mensagens indicando se o jogador acertou ou errou e atualiza o estado do tabuleiro.
 
 ### Protocolo da Camada de Aplicação 
