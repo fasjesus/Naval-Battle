@@ -23,6 +23,43 @@ O protocolo de transporte utilizado é o TCP (Transmission Control Protocol). A 
 - Módulo socket para comunicação em rede
 - Módulo threading para gerenciar múltiplas conexões de clientes simultâneas no servidor
 
+## Como Instalar
+
+Agora você precisa clonar o repositório para a sua máquina. Siga os comandos abaixo:
+
+```bash
+git clone https://github.com/fasjesus/Naval-Battle
+
+cd Socket
+```
+Daqui em diante, recomenda-se a utilização do **Power Shell** no Windows ou do **terminal nativo** no Linux.
+
+### PARA VERIRIFICAR IP:
+
+- ipconfig
+
+exemplo:
+
+Adaptador Ethernet Ethernet:
+
+   - Sufixo DNS específico de conexão. . . . . . : uesc.net
+   - Endereço IPv6 de link local . . . . . . . . : fe80::49e5:1c32:b9f0:b23d%18
+   - Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.72.3
+   - Máscara de Sub-rede . . . . . . . . . . . . : 255.255.254.0
+   - Gateway Padrão. . . . . . . . . . . . . . . : 192.168.73.1
+
+Adaptador de Rede sem Fio Wi-Fi:
+
+   - Sufixo DNS específico de conexão. . . . . . :
+   - Endereço IPv6 de link local . . . . . . . . : fe80::1b27:871a:2336:38eb%8
+   - Endereço IPv4. . . . . . . .  . . . . . . . : 172.26.11.205
+   - Máscara de Sub-rede . . . . . . . . . . . . : 255.255.192.0
+   - Gateway Padrão. . . . . . . . . . . . . . . : 172.26.0.1
+
+- Copie o numero que está em IPv4 Address. 
+- Cole na quarta linha do código `client.py`, onde tem "HOST = ''".
+- Se necessário, altere a porta também, em "PORT = ''", logo abaixo de "HOST = ''".
+
 ### Passos para Executar o Servidor
 
 1. Navegue até a pasta `Server`:
@@ -38,33 +75,9 @@ Em outro terminal:
 1. Navegue até a pasta `Client`:
    - cd Naval Battle/Client
 
-2. Ajuste o endereço IP do servidor no cliente:
-   - No arquivo cliente.py, ajuste o valor da variável HOST para o endereço IP do servidor.
-
-3. Execute o script:
+2. Execute o script:
     - python client.py
 
-### PARA VERIRIFICAR IP:
-
-- ipconfig
-
-exemplo:
-
-Adaptador Ethernet Ethernet:
-
-   Sufixo DNS específico de conexão. . . . . . : uesc.net
-   Endereço IPv6 de link local . . . . . . . . : fe80::49e5:1c32:b9f0:b23d%18
-   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.72.3
-   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.254.0
-   Gateway Padrão. . . . . . . . . . . . . . . : 192.168.73.1
-
-Adaptador de Rede sem Fio Wi-Fi:
-
-   Sufixo DNS específico de conexão. . . . . . :
-   Endereço IPv6 de link local . . . . . . . . : fe80::1b27:871a:2336:38eb%8
-   Endereço IPv4. . . . . . . .  . . . . . . . : 172.26.11.205
-   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.192.0
-   Gateway Padrão. . . . . . . . . . . . . . . : 172.26.0.1
 
 ### Protocolo de Comunicação (resumo)
 

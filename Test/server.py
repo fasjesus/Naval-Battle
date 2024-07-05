@@ -1,6 +1,7 @@
 import socket
 import threading
 import random
+import time
 
 SIZE = 15
 NUM_NAVIOS = 10
@@ -10,21 +11,29 @@ def inicializa_campo():
     return [[' ' for _ in range(SIZE)] for _ in range(SIZE)]
 
 def coloca_navios(campo):
-    for _ in range(NUM_NAVIOS):
-        while True:
-            x = random.randint(0, SIZE - 1)
-            y = random.randint(0, SIZE - 1)
-            if campo[x][y] == ' ':
-                campo[x][y] = 'S'
-                break
+    navios_colocados = 0
+    coordenadas_ocupadas = set()
+    
+    while navios_colocados < NUM_NAVIOS:
+        x = random.randint(0, SIZE - 1)
+        y = random.randint(0, SIZE - 1)
+        coordenada = (x, y)
+        
+        if coordenada not in coordenadas_ocupadas:
+            campo[x][y] = 'S'
+            coordenadas_ocupadas.add(coordenada)
+            navios_colocados += 1
+            
+    return campo
+        
 
 def exibe_campo(campo):
-    header = "  " + " ".join([chr(c + ord('A')) for c in range(SIZE)]) + "\n"
+    header = "    " + " ".join([chr(c + ord('A')) for c in range(SIZE)]) + "\n"
     display = header
     for i in range(SIZE):
-        row_number = f"{i + 1:2} "
-        row_content = " ".join(campo[i])
-        display += row_number + row_content + "\n"
+        row_number = f"{i + 1:2}"
+        row_content = row_number.rjust(2) + "  " + " ".join(campo[i])
+        display += row_content + "\n"
     return display
 
 def handle_client(conn, addr):
@@ -39,8 +48,7 @@ def handle_client(conn, addr):
     acertos_cliente = 0
     coordenadas_usadas_cliente = set()
 
-    while tentativas_cliente < (MAX_TENT - 1) and acertos_cliente < NUM_NAVIOS:
-        # Jogada do cliente
+    while tentativas_cliente < MAX_TENT  and acertos_cliente < NUM_NAVIOS:
         while True:
             data = conn.recv(1024).decode('utf-8')
             if not data or data.lower() == 'sair':
@@ -55,33 +63,40 @@ def handle_client(conn, addr):
                         coordenadas_usadas_cliente.add((x, y))
                         break
                     else:
-                        conn.sendall("Coordenadas já escolhidas, tente novamente\n".encode('utf-8'))
+                        conn.sendall("\nCoordenadas já escolhidas, tente novamente\n".encode('utf-8'))
                 else:
-                    conn.sendall("Comando inválido, tente novamente\n".encode('utf-8'))
+                    conn.sendall("\nComando inválido, tente novamente\n".encode('utf-8'))
             except ValueError:
-                conn.sendall("Formato inválido, use <letra> <número>\n".encode('utf-8'))
+                conn.sendall("\nFormato inválido, use <letra> <número>\n".encode('utf-8'))
 
         mensagens = ""
         if campo_cliente[x][y] == 'S':
             campo_exibicao_cliente[x][y] = 'O'
-            mensagens += "Acertou!\n"
+            mensagens += "\n============"
+            mensagens += "\nAcertou!\n"
+            mensagens += "============\n"
             acertos_cliente += 1
+            tentativas_cliente += 1
         else:
             campo_exibicao_cliente[x][y] = 'X'
-            mensagens += "Errou!\n"
+            mensagens += "\n============"
+            mensagens += "\nErrou!\n"
+            mensagens += "============\n"
             tentativas_cliente += 1
         
         mensagens += exibe_campo(campo_exibicao_cliente)
         mensagens += f"Você já tentou: {tentativas_cliente} vezes\n"
         conn.sendall(mensagens.encode('utf-8'))
+        print(tentativas_cliente)
 
     mensagens = "\nFim de jogo!\n"
-    mensagens += f"Navios derrubados pelo cliente: {acertos_cliente}\n"
-    mensagens += "Campo do cliente:\n"
+    mensagens += f"\nNavios derrubados pelo cliente: {acertos_cliente}\n"
+    mensagens += "\nCampo do cliente:\n\n"
     mensagens += exibe_campo(campo_exibicao_cliente)
-    mensagens += "Campo completo:\n"
+    mensagens += "\nCampo completo:\n\n"
     mensagens += exibe_campo(campo_cliente)
     conn.sendall(mensagens.encode('utf-8'))
+    time.sleep(4)
     conn.close()
 
 def main():

@@ -26,7 +26,7 @@ def main():
                 client.sendall(letra.encode('utf-8'))
                 return
             if letra.upper() < 'A' or letra.upper() > chr(ord('A') + SIZE - 1):
-                print("Coordenada inválida, tente novamente.")
+                print("\nCoordenada inválida, tente novamente.\n")
                 continue
 
             numero = input("Digite o número: ")
@@ -35,7 +35,7 @@ def main():
                 client.sendall(numero.encode('utf-8'))
                 return
             if not numero.isdigit() or int(numero) < 1 or int(numero) > SIZE:
-                print("Coordenada inválida, tente novamente.")
+                print("\nCoordenada inválida, tente novamente.\n")
                 continue
 
             client.sendall(f"{letra} {numero}".encode('utf-8'))
