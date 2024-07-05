@@ -89,8 +89,8 @@ Eventos e Estados
 - Servidor: Recebe coordenadas, verifica se é um acerto ou erro, atualiza o estado do jogo e envia a resposta ao cliente.
 
 4. Atualização do Estado do Jogo:
-- Servidor: Envia estado atualizado do campo de batalha ao cliente.
-- Cliente: Recebe e exibe o estado atualizado do campo.
+- Servidor: Envia e exibe estado atualizado do campo de batalha ao cliente.
+- Cliente: Recebe o estado atualizado do campo.
 
 5. Final do Jogo:
 - Servidor: Quando o cliente atinge o limite de tentativas ou afunda todos os navios, envia mensagem de fim de jogo e o estado final do campo.
